@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps & Cloud Infrastructure Masterclass - My Learning Journey</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        header {
+            background: white;
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            margin-bottom: 40px;
+            text-align: center;
+        }
+
+        h1 {
+            color: #333;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #666;
+            font-size: 1.2em;
+        }
+
+        .course-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .course-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.15);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .course-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+        }
+
+        .course-number {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 40px;
+            font-weight: bold;
+            margin-bottom: 15px;
+        }
+
+        .course-title {
+            color: #333;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: 600;
+        }
+
+        .skills-learned {
+            margin: 20px 0;
+        }
+
+        .skills-learned h3 {
+            color: #667eea;
+            font-size: 1em;
+            margin-bottom: 10px;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #f0f0f0;
+            padding: 5px 12px;
+            margin: 5px 5px 5px 0;
+            border-radius: 20px;
+            font-size: 0.85em;
+            color: #555;
+        }
+
+        .cert-button {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 12px 30px;
+            border-radius: 25px;
+            text-decoration: none;
+            margin-top: 15px;
+            transition: transform 0.2s ease;
+            font-weight: 600;
+        }
+
+        .cert-button:hover {
+            transform: scale(1.05);
+        }
+
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.9);
+        }
+
+        .modal-content {
+            margin: 2% auto;
+            display: block;
+            max-width: 90%;
+            max-height: 90%;
+        }
+
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #f1f1f1;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.8em;
+            }
+            
+            .course-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>DevOps & Cloud Infrastructure Masterclass</h1>
+            <p class="subtitle">My Comprehensive Learning Journey</p>
+        </header>
+
+        <div class="course-grid">
+            <!-- Course 1 -->
+            <div class="course-card">
+                <div class="course-number">1</div>
+                <div class="course-title">Cloud Native Development Bootcamp | Emeritus</div>
+                <div class="skills-learned">
+                    <h3>Key Skills Learned:</h3>
+                    <span class="skill-tag">Cloud Native Architecture</span>
+                    <span class="skill-tag">Microservices</span>
+                    <span class="skill-tag">Containerization</span>
+                    <span class="skill-tag">CI/CD Pipelines</span>
+                </div>
+                <a href="#" class="cert-button" onclick="openModal('cert1')">View Certificate</a>
+            </div>
+
+            <!-- Course 2 -->
+            <div class="course-card">
+                <div class="course-number">2</div>
+                <div class="course-title">AWS EKS Kubernetes-Masterclass - DevOps, Microservices | Udemy</div>
+                <div class="skills-learned">
+                    <h3>Key Skills Learned:</h3>
+                    <span class="skill-tag">Amazon EKS</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">AWS Services</span>
+                    <span class="skill-tag">Container Orchestration</span>
+                    <span class="skill-tag">Microservices Deployment</span>
+                </div>
+                <a href="#" class="cert-button" onclick="openModal('cert2')">View Certificate</a>
+            </div>
+
+            <!-- Course 3 -->
+            <div class="course-card">
+                <div class="course-number">3</div>
+                <div class="course-title">DevOps Projects | Real Time DevOps & GitOps Projects | Udemy</div>
+                <div class="skills-learned">
+                    <h3>Key Skills Learned:</h3>
+                    <span class="skill-tag">GitOps</span>
+                    <span class="skill-tag">ArgoCD</span>
+                    <span class="skill-tag">Jenkins</span>
+                    <span class="skill-tag">Real-world Projects</span>
+                    <span class="skill-tag">Automation</span>
+                </div>
+                <a href="#" class="cert-button" onclick="openModal('cert3')">View Certificate</a>
+            </div>
+
+            <!-- Course 4 -->
+            <div class="course-card">
+                <div class="course-number">4</div>
+                <div class="course-title">Learn DevOps: Docker, Kubernetes, Terraform and Azure DevOps | Udemy</div>
+                <div class="skills-learned">
+                    <h3>Key Skills Learned:</h3>
+                    <span class="skill-tag">Docker</span>
+                    <span class="skill-tag">Kubernetes</span>
+                    <span class="skill-tag">Terraform</span>
+                    <span class="skill-tag">Azure DevOps</span>
+                    <span class="skill-tag">Infrastructure as Code</span>
+                </div>
+                <a href="#" class="cert-button" onclick="openModal('cert4')">View Certificate</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>© 2024 My DevOps Learning Journey | Continuously Learning & Growing</p>
+        </footer>
+    </div>
+
+    <!-- Modal for Certificate Display -->
+    <div id="certModal" class="modal" onclick="closeModal()">
+        <span class="close">&times;</span>
+        <img class="modal-content" id="certImage">
+    </div>
+
+    <script>
+        function openModal(certId) {
+            event.preventDefault();
+            const modal = document.getElementById('certModal');
+            const img = document.getElementById('certImage');
+            
+            // Map certificate IDs to image paths
+            const certPaths = {
+                'cert1': 'certificates/cloud-native-bootcamp.jpg',
+                'cert2': 'certificates/aws-eks-kubernetes.jpg',
+                'cert3': 'certificates/devops-gitops-projects.jpg',
+                'cert4': 'certificates/docker-kubernetes-terraform.jpg'
+            };
+            
+            img.src = certPaths[certId];
+            modal.style.display = 'block';
+        }
+
+        function closeModal() {
+            document.getElementById('certModal').style.display = 'none';
+        }
+
+        // Close modal on Escape key
+        document.addEventListener('keydown', function(event) {
+            if (event.key === 'Escape') {
+                closeModal();
+            }
+        });
+    </script>
+</body>
+</html>
